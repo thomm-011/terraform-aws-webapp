@@ -1,0 +1,122 @@
+# ===============================================
+# TERRAFORM VARIABLES CONFIGURATION
+# Author: Thomas Silva Cordeiro
+# Description: Example configuration file
+# ===============================================
+
+# ===============================================
+# BASIC CONFIGURATION
+# ===============================================
+
+# AWS Region where resources will be created
+aws_region = "us-east-1"
+
+# Project name (used for resource naming)
+project_name = "thomas-webapp"
+
+# Environment (dev, staging, prod)
+environment = "dev"
+
+# ===============================================
+# NETWORKING CONFIGURATION
+# ===============================================
+
+# VPC CIDR block
+vpc_cidr = "10.0.0.0/16"
+
+# Number of public subnets (minimum 2 for ALB)
+public_subnet_count = 2
+
+# Number of private subnets (minimum 2 for RDS)
+private_subnet_count = 2
+
+# Enable NAT Gateway for private subnets (costs money!)
+enable_nat_gateway = true
+
+# ===============================================
+# COMPUTE CONFIGURATION
+# ===============================================
+
+# EC2 instance type for web servers
+instance_type = "t3.micro"
+
+# Auto Scaling Group configuration
+min_size         = 2
+max_size         = 6
+desired_capacity = 2
+
+# AWS Key Pair name for SSH access (optional)
+# Create a key pair in AWS Console first
+key_name = ""
+
+# ===============================================
+# DATABASE CONFIGURATION
+# ===============================================
+
+# RDS instance class
+db_instance_class = "db.t3.micro"
+
+# Database configuration
+db_name     = "webapp"
+db_username = "admin"
+
+# Database password (leave empty to auto-generate)
+# db_password = "YourSecurePassword123!"
+
+# Storage configuration
+db_allocated_storage = 20
+
+# Backup retention (days)
+db_backup_retention_period = 7
+
+# Multi-AZ deployment (costs more but provides HA)
+db_multi_az = false
+
+# ===============================================
+# STORAGE CONFIGURATION
+# ===============================================
+
+# S3 bucket name (leave empty for auto-generated name)
+s3_bucket_name = ""
+
+# Enable S3 versioning
+enable_s3_versioning = true
+
+# ===============================================
+# MONITORING CONFIGURATION
+# ===============================================
+
+# Enable detailed monitoring for EC2 instances
+enable_detailed_monitoring = true
+
+# Health check configuration
+health_check_path     = "/"
+health_check_interval = 30
+
+# ===============================================
+# ADDITIONAL TAGS
+# ===============================================
+
+additional_tags = {
+  "CostCenter" = "Development"
+  "Owner"      = "Thomas Silva Cordeiro"
+  "Purpose"    = "Learning and Portfolio"
+}
+
+# ===============================================
+# COST OPTIMIZATION NOTES
+# ===============================================
+
+# For cost optimization in development:
+# - Use t3.micro instances (free tier eligible)
+# - Set enable_nat_gateway = false (saves ~$45/month per NAT Gateway)
+# - Use db.t3.micro for RDS (free tier eligible)
+# - Set db_multi_az = false (saves costs)
+# - Consider using smaller instance types
+
+# For production:
+# - Use larger instance types (t3.small or larger)
+# - Enable NAT Gateway for security
+# - Use Multi-AZ RDS for high availability
+# - Enable detailed monitoring
+# - Consider using reserved instances for cost savings
