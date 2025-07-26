@@ -24,7 +24,6 @@ provider "aws" {
       Environment = var.environment
       Owner       = "Thomas Silva Cordeiro"
       ManagedBy   = "Terraform"
-      CreatedDate = formatdate("YYYY-MM-DD", timestamp())
     }
   }
 }
