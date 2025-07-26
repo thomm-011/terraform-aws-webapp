@@ -1,6 +1,5 @@
 # 🚀 AWS Web Application Infrastructure with Terraform
 
-**Author:** Thomas Silva Cordeiro  
 **Project:** Scalable Web Application Infrastructure  
 **Technology:** Terraform + AWS  
 
@@ -134,7 +133,7 @@ terraform apply
 # Get the application URL
 terraform output application_url
 
-# Example output: http://thomas-webapp-alb-123456789.us-east-1.elb.amazonaws.com
+# Example output: http://my-webapp-alb-123456789.us-east-1.elb.amazonaws.com
 ```
 
 ### **4. Clean Up**
@@ -149,7 +148,7 @@ terraform destroy
 ```hcl
 # terraform.tfvars
 aws_region   = "us-east-1"
-project_name = "thomas-webapp"
+project_name = "my-webapp"
 environment  = "dev"
 
 # Instance configuration
@@ -312,10 +311,7 @@ This project demonstrates:
 
 ## 📞 Contact
 
-**Thomas Silva Cordeiro**
-- **Email:** thomas.s.cordeiro@hotmail.com
-- **LinkedIn:** [thomas-s-923082184](https://www.linkedin.com/in/thomas-s-923082184/)
-- **GitHub:** [thomm-011](https://github.com/thomm-011)
+For questions or contributions, please open an issue in this repository.
 
 ---
 
@@ -464,7 +460,7 @@ terraform apply
 # Obter a URL da aplicação
 terraform output application_url
 
-# Exemplo de saída: http://thomas-webapp-alb-123456789.us-east-1.elb.amazonaws.com
+# Exemplo de saída: http://my-webapp-alb-123456789.us-east-1.elb.amazonaws.com
 ```
 
 ### **4. Limpeza**
@@ -479,7 +475,7 @@ terraform destroy
 ```hcl
 # terraform.tfvars
 aws_region   = "us-east-1"
-project_name = "thomas-webapp"
+project_name = "my-webapp"
 environment  = "dev"
 
 # Configuração da instância
@@ -642,10 +638,7 @@ Este projeto demonstra:
 
 ## 📞 Contato
 
-**Thomas Silva Cordeiro**
-- **Email:** thomas.s.cordeiro@hotmail.com
-- **LinkedIn:** [thomas-s-923082184](https://www.linkedin.com/in/thomas-s-923082184/)
-- **GitHub:** [thomm-011](https://github.com/thomm-011)
+Para dúvidas ou contribuições, por favor abra uma issue neste repositório.
 
 ---
 
